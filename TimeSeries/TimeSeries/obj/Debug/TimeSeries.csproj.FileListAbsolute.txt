@@ -1,0 +1,10 @@
+c:\users\rust\documents\visual studio 2013\Projects\TimeSeries\TimeSeries\bin\Debug\TimeSeries.exe.config
+c:\users\rust\documents\visual studio 2013\Projects\TimeSeries\TimeSeries\bin\Debug\TimeSeries.exe
+c:\users\rust\documents\visual studio 2013\Projects\TimeSeries\TimeSeries\bin\Debug\TimeSeries.pdb
+c:\users\rust\documents\visual studio 2013\Projects\TimeSeries\TimeSeries\bin\Debug\ZedGraph.dll
+c:\users\rust\documents\visual studio 2013\Projects\TimeSeries\TimeSeries\obj\Debug\TimeSeries.csprojResolveAssemblyReference.cache
+c:\users\rust\documents\visual studio 2013\Projects\TimeSeries\TimeSeries\obj\Debug\TimeSeries.Form1.resources
+c:\users\rust\documents\visual studio 2013\Projects\TimeSeries\TimeSeries\obj\Debug\TimeSeries.Properties.Resources.resources
+c:\users\rust\documents\visual studio 2013\Projects\TimeSeries\TimeSeries\obj\Debug\TimeSeries.csproj.GenerateResource.Cache
+c:\users\rust\documents\visual studio 2013\Projects\TimeSeries\TimeSeries\obj\Debug\TimeSeries.exe
+c:\users\rust\documents\visual studio 2013\Projects\TimeSeries\TimeSeries\obj\Debug\TimeSeries.pdb
