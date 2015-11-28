@@ -8,3 +8,13 @@ c:\users\rust\documents\visual studio 2013\Projects\TimeSeries\TimeSeries\obj\De
 c:\users\rust\documents\visual studio 2013\Projects\TimeSeries\TimeSeries\obj\Debug\TimeSeries.csproj.GenerateResource.Cache
 c:\users\rust\documents\visual studio 2013\Projects\TimeSeries\TimeSeries\obj\Debug\TimeSeries.exe
 c:\users\rust\documents\visual studio 2013\Projects\TimeSeries\TimeSeries\obj\Debug\TimeSeries.pdb
+C:\Users\Elims Smile\Documents\GitHub\Series\TimeSeries\TimeSeries\bin\Debug\TimeSeries.exe.config
+C:\Users\Elims Smile\Documents\GitHub\Series\TimeSeries\TimeSeries\obj\Debug\TimeSeries.exe
+C:\Users\Elims Smile\Documents\GitHub\Series\TimeSeries\TimeSeries\obj\Debug\TimeSeries.pdb
+C:\Users\Elims Smile\Documents\GitHub\Series\TimeSeries\TimeSeries\bin\Debug\TimeSeries.exe
+C:\Users\Elims Smile\Documents\GitHub\Series\TimeSeries\TimeSeries\bin\Debug\TimeSeries.pdb
+C:\Users\Elims Smile\Documents\GitHub\Series\TimeSeries\TimeSeries\bin\Debug\ZedGraph.dll
+C:\Users\Elims Smile\Documents\GitHub\Series\TimeSeries\TimeSeries\obj\Debug\TimeSeries.csprojResolveAssemblyReference.cache
+C:\Users\Elims Smile\Documents\GitHub\Series\TimeSeries\TimeSeries\obj\Debug\TimeSeries.Form1.resources
+C:\Users\Elims Smile\Documents\GitHub\Series\TimeSeries\TimeSeries\obj\Debug\TimeSeries.Properties.Resources.resources
+C:\Users\Elims Smile\Documents\GitHub\Series\TimeSeries\TimeSeries\obj\Debug\TimeSeries.csproj.GenerateResource.Cache
