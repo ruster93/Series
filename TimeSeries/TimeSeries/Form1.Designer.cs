@@ -31,6 +31,8 @@
             this.Update = new System.Windows.Forms.Button();
             this.zedGraphControl1 = new ZedGraph.ZedGraphControl();
             this.label1 = new System.Windows.Forms.Label();
+            this.Zoom_minus = new System.Windows.Forms.Button();
+            this.Zoom_plus = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Update
@@ -61,11 +63,33 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "label1";
             // 
+            // Zoom_minus
+            // 
+            this.Zoom_minus.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Zoom_minus.Location = new System.Drawing.Point(521, 9);
+            this.Zoom_minus.Name = "Zoom_minus";
+            this.Zoom_minus.Size = new System.Drawing.Size(23, 23);
+            this.Zoom_minus.TabIndex = 3;
+            this.Zoom_minus.Text = "-";
+            this.Zoom_minus.UseVisualStyleBackColor = true;
+            this.Zoom_minus.Click += new System.EventHandler(this.Zoom_minus_Click);
+            // 
+            // Zoom_plus
+            // 
+            this.Zoom_plus.Location = new System.Drawing.Point(550, 9);
+            this.Zoom_plus.Name = "Zoom_plus";
+            this.Zoom_plus.Size = new System.Drawing.Size(23, 23);
+            this.Zoom_plus.TabIndex = 4;
+            this.Zoom_plus.Text = "+";
+            this.Zoom_plus.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(708, 353);
+            this.Controls.Add(this.Zoom_plus);
+            this.Controls.Add(this.Zoom_minus);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.zedGraphControl1);
             this.Controls.Add(this.Update);
@@ -82,6 +106,8 @@
         private System.Windows.Forms.Button Update;
         private ZedGraph.ZedGraphControl zedGraphControl1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button Zoom_minus;
+        private System.Windows.Forms.Button Zoom_plus;
     }
 }
 

@@ -16,9 +16,13 @@ namespace TimeSeries
 {
     public partial class Form1 : Form
     {
+        private int zoom;
         public Form1()
         {
             InitializeComponent();
+            //zedGraphControl1.MouseWheel += zedGraphControl1_MouseWheel;
+            zoom = 1;
+            Show_Plot();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -34,10 +38,10 @@ namespace TimeSeries
             DateTime lastDBDate = DateTime.Today.AddDays(-1);
             string commandInsert = "";
             int backDays = 1;
-            try{
                 SqlConnection myConnection = new SqlConnection("Server=localhost;" +
                                                                "database=TimeSeries;" +
                                                                "Integrated Security=True");
+            try{
                 myConnection.Open();
                 SqlCommand myCommand = new SqlCommand("SELECT top(1) dateVisit "+
                                                       "FROM Series "+
@@ -49,8 +53,6 @@ namespace TimeSeries
                 {
                     lastDBDate = Convert.ToDateTime( myReader["dateVisit"].ToString());
                     TimeSpan ts = date - lastDBDate;
-
-                    // Difference in days.
                     backDays = ts.Days-1;
                     if (backDays < 0)
                     {
@@ -61,8 +63,9 @@ namespace TimeSeries
                 }
                 else 
                 {
-                    label1.Text += "dsf";
-                    backDays = 6000;
+                    lastDBDate = Convert.ToDateTime("2008-05-18");
+                    TimeSpan ts = date - lastDBDate;
+                    backDays = ts.Days - 1;
                 }
                 myReader.Close();
                 myCommand.CommandText = "INSERT INTO Series (dateVisit, visitors) " +
@@ -99,6 +102,7 @@ namespace TimeSeries
                                 myCommand.CommandText = "INSERT INTO Series (dateVisit, visitors) " +
                                       " VALUES ";
                             }
+
                             ++count;
                         }
                         
@@ -107,12 +111,81 @@ namespace TimeSeries
                     myCommand.CommandText += commandInsert.Substring(0, commandInsert.Length - 2);
                     myCommand.ExecuteNonQuery();
                 }
-
+                myConnection.Close();
+                Show_Plot();
                 MessageBox.Show("Данные обновлены.");
             }catch(Exception exc){
-                MessageBox.Show("Не удалось обновить данне. \nException: " + exc.ToString());
+                MessageBox.Show("Не удалось обновить данные. \nException: " + exc.ToString());
             }
          }
+
+        private void Show_Plot()
+        {
+            GraphPane pane = zedGraphControl1.GraphPane;
+            // Создадим список точек
+            PointPairList list = new PointPairList();
+
+            SqlConnection myConnection = new SqlConnection("Server=localhost;" +
+                                                               "database=TimeSeries;" +
+                                                               "Integrated Security=True");
+            try
+            {
+                myConnection.Open();
+                SqlCommand myCommand = new SqlCommand("SELECT * " +
+                                                      "FROM Series " +
+                                                      "ORDER BY dateVisit", myConnection);
+                SqlDataReader myReader = null;
+                myReader = myCommand.ExecuteReader();
+                while (myReader.Read())
+                {
+                    list.Add(new XDate(Convert.ToDateTime(myReader["dateVisit"].ToString())), Convert.ToInt32(myReader["visitors"].ToString()));
+                }
+                myReader.Close();
+                myConnection.Close();
+
+                // Выберем случайный цвет для графика
+                Color curveColor = Color.DarkBlue;
+                LineItem myCurve = pane.AddCurve("", list, curveColor, SymbolType.None);
+                
+                // Установим, что по оси X у нас откладываются даты,
+                pane.XAxis.Type = AxisType.Date;
+
+                // Включим сглаживание
+                //myCurve.Line.IsSmooth = true;
+                // Установим интервал изменения по оси X
+                pane.XAxis.Min = new XDate(2008, 05, 19);
+                pane.XAxis.Max = new XDate(DateTime.Today.AddDays(-1));
+
+                // По оси Y установим автоматический подбор масштаба
+                //pane.YAxis.MinAuto = true;
+                //pane.YAxis.MaxAuto = true;
+
+                // Обновим график
+                zedGraphControl1.AxisChange();
+                zedGraphControl1.Invalidate();
+                
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show("Не удалось отобразить данные. \nException: " + exc.ToString());
+            }
+        }
+
+        private void Zoom_minus_Click(object sender, EventArgs e)
+        {
+            if (zoom > 1) {
+                GraphPane pane = zedGraphControl1.GraphPane;
+                pane.
+                --zoom;
+            }
+        }
+
+        //void zedGraphControl1_MouseWheel(object sender, MouseEventArgs e)
+        //{
+        //    // throw new NotImplementedException();
+        //    MessageBox.Show("sdfds");
+        //}
+
         
     }
 }
