@@ -1,0 +1,8 @@
+
+select PredictVisitors
+from(
+SELECT
+
+  (PredictTimeSeries([TimeSeries].[visitors],5)) as [PredictVisitors]
+From
+  [TimeSeries]) as T

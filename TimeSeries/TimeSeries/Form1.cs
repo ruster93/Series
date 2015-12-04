@@ -173,11 +173,11 @@ namespace TimeSeries
 
         private void Zoom_minus_Click(object sender, EventArgs e)
         {
-            if (zoom > 1) {
+            /*if (zoom > 1) {
                 GraphPane pane = zedGraphControl1.GraphPane;
                 pane.
                 --zoom;
-            }
+            }*/
         }
 
         //void zedGraphControl1_MouseWheel(object sender, MouseEventArgs e)

@@ -1,0 +1,7 @@
+drop  MINING STRUCTURE [VisitorsFuture]
+go
+CREATE MINING STRUCTURE [VisitorsFuture]
+(
+   [dateVisit]  date KEY TIME,
+   [visitors]  LONG Continuous 
+)

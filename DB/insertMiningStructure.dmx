@@ -1,0 +1,9 @@
+INSERT INTO MINING STRUCTURE [VisitorsFuture]
+(
+   [dateVisit],
+   [visitors]    
+)
+OPENQUERY([Time Series],
+   'SELECT dateVisit,
+		   visitors
+    FROM dbo.Series')

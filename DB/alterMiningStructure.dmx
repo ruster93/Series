@@ -1,0 +1,6 @@
+ALTER MINING STRUCTURE [VisitorsFuture]
+ADD MINING MODEL [TimeSeries]
+(
+   dateVisit,
+   [visitors] PREDICT
+) USING Microsoft_Time_Series(PERIODICITY_HINT = '{7,365}', MISSING_VALUE_SUBSTITUTION = 'Previous')
